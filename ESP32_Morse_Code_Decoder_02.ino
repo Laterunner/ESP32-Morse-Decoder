@@ -24,7 +24,7 @@
 #include "SH1106.h"     // https://github.com/squix78/esp8266-oled-ssd1306
 SH1106 display(0x3c, 17,16); // 1.3" OLED display object definition (address, SDA, SCL) Connect OLED SDA , SCL pins to ESP SDA, SCL pins
 
-float magnitude           = 0;;
+float magnitude           = 0;
 int   magnitudelimit      = 100;
 int   magnitudelimit_low  = 100;
 int   realstate           = LOW;
@@ -41,8 +41,8 @@ float Q1 = 0;
 float Q2 = 0;
 float sine;
 float cosine;
-float sampling_freq = 45000;
-float target_freq   = 558.0; // adjust for your needs see above
+float sampling_freq = 22000;
+float target_freq   = 496.0; // adjust for your needs see above
 int   n = 128;               // if you change here please change next line also
 int   testData[128];
 float bw;
@@ -178,10 +178,12 @@ void loop() {
   realstatebefore     = realstate;
   lasthighduration    = highduration;
   filteredstatebefore = filteredstate;
-  display.drawString(0, 0, "WPM = "+String(wpm));
-  display.drawString(64, 0,"BW = "+String(bw,0)+"Hz");
+  display.drawString(0, 0, "Signal     = " + String(target_freq,0)+ String(" Hz"));
+  display.drawString(0, 10, "Sampling = " + String(sampling_freq/1000,1)+ String(" kHz"));
+  display.drawString(0, 20, "BW         = " + String(bw, 0) + " Hz");
+  display.drawString(0, 30, "WPM       = " + String(wpm));
   display.setFont(ArialMT_Plain_16);
-  display.drawString(0, 26, DisplayLine);
+  display.drawString(0, 40, DisplayLine);
   display.display();
   display.setFont(ArialMT_Plain_10);
   display.clear();
