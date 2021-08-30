@@ -41,7 +41,7 @@ float Q1 = 0;
 float Q2 = 0;
 float sine;
 float cosine;
-float sampling_freq = 22000;
+float sampling_freq = 22320;
 float target_freq   = 496.0; // adjust for your needs see above
 int   n = 128;               // if you change here please change next line also
 int   testData[128];
