@@ -19,8 +19,10 @@
  Feel free to change, copy or what ever you like but respect
  that license is http://www.gnu.org/copyleft/gpl.html
  Read more here http://en.wikipedia.org/wiki/Goertzel_algorithm 
- Adapted for the ESP32/ESP8266 by G6EJD  
-*/
+ Adapted for the ESP32/ESP8266 by G6EJD
+ ESP32 (Board R32 D1), Microfone KY037 connected to 3.3V, Oled 1,3" I2C)
+ A0 is Board Pin 036
+ */
 #include "SH1106.h"     // https://github.com/squix78/esp8266-oled-ssd1306
 SH1106 display(0x3c, 17,16); // 1.3" OLED display object definition (address, SDA, SCL) Connect OLED SDA , SCL pins to ESP SDA, SCL pins
 
