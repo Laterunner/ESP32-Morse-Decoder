@@ -15,5 +15,5 @@ n = 128 determines the number of samples, try to get this as high as possible to
 
 Sampling frequency is a function of CPU speed, so largely fixed, but can be veried downwards to about 30000, needs some experimentation with your set-up.
 
-Target frequency is the received audio frequency, if you prefer a higher beat for Morse tones, then adjust accordingly and remeber to tune your radio to try to match your chosen frequency.
+Target frequency is the received audio frequency, if you prefer a higher beat for Morse tones, then adjust accordingly and remember to tune your radio to try to match your chosen frequency.
 
