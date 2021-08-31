@@ -1,7 +1,7 @@
 # ESP32-Morse-Decoder
 Using an ESP32 and OLED with a basic microphone to decode Morse Code live to the display
 
-You can use the ESP8266, but will need to expriement with the sampling_frequency, try 30000
+You can use the ESP8266, but will need to experiment with the sampling_frequency, try 30000
 
 If you need to reduce the audio bandwidth of the decoder; currently about 320Hz to cope with very noisy bands/audio, then adjust these lines:
 
