@@ -165,9 +165,9 @@ void loop() {
 
     if (filteredstate == HIGH) { //// we did end a LOW
       float lacktime = 1;
-      if (wpm > 25)lacktime = 1.0; ///  when high speeds we have to have a little more pause before new letter or new word
-      //if (wpm > 30)lacktime = 1.2; this lacktime worsens decoding with esp 32
-      //if (wpm > 35)lacktime = 1.5; this lacktime worsens decoding at high speed
+      if (wpm > 25)lacktime = 1.0; // when high speeds we have to have a little more pause before new letter or new word
+      if (wpm > 30)lacktime = 1.2; // maybe these values can be improved.
+      if (wpm > 35)lacktime = 1.5; 
       if (lowduration > (hightimesavg * (2 * lacktime)) && lowduration < hightimesavg * (5 * lacktime)) { // letter space
         CodeToChar();
         CodeBuffer[0] = '\0';
