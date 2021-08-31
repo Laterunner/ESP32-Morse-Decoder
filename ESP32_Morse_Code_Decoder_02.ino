@@ -64,7 +64,7 @@ long lowtimesavg;
 long startttimelow;
 long lowduration;
 long laststarttime = 0;
-#define num_chars 14
+#define num_chars 11  //changed to improve visibility of morse signs
 char CodeBuffer[num_chars];
 char DisplayLine[num_chars +1];
 int  stop = LOW;
@@ -166,8 +166,8 @@ void loop() {
     if (filteredstate == HIGH) { //// we did end a LOW
       float lacktime = 1;
       if (wpm > 25)lacktime = 1.0; ///  when high speeds we have to have a little more pause before new letter or new word
-      if (wpm > 30)lacktime = 1.2;
-      if (wpm > 35)lacktime = 1.5;
+      //if (wpm > 30)lacktime = 1.2; this lacktime worsens decoding with esp 32
+      //if (wpm > 35)lacktime = 1.5; this lacktime worsens decoding at high speed
       if (lowduration > (hightimesavg * (2 * lacktime)) && lowduration < hightimesavg * (5 * lacktime)) { // letter space
         CodeToChar();
         CodeBuffer[0] = '\0';
